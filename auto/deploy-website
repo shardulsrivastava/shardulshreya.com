@@ -4,7 +4,8 @@ set -euox pipefail
 
 cd "$(dirname $0)/../website/"
 
-apt-get install awscli -y
+echo "Installing updates"
+sudo apt-get update -y && sudo apt-get install awscli -y
 
 echo "Updating index.html on shardulshreya.com "
 aws s3 cp index.html s3://shardulshreya.com
