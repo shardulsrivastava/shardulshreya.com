@@ -1,0 +1,9 @@
+{
+  "name": "wedding-notification-api",
+  "version": "1.0.0",
+  "description": "Notification API which sends SNS notitication to the subscribers.",
+  "author": "Shardul Srivastava",
+  "dependencies": {
+    "aws-sdk": "^2.590.0"
+  }
+}
