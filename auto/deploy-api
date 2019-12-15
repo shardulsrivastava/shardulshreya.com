@@ -4,11 +4,16 @@ set -euox pipefail
 
 cd "$(dirname $0)/.."
 
+echo $PATH
+
+echo "Printing environment variables"
+env
+
 echo "Setting up aws-sdk layer"
 . auto/layer
 
 echo "Install serverless"
-yarn global add serverless
+yarn global add serverless --prefix /usr/bin
 
 echo "Deploying notification-api"
 serverless deploy -v
