@@ -6,6 +6,9 @@ cd "$(dirname $0)/.."
 
 echo $PATH
 
+echo "Installing update"
+sudo apt-get update -y && sudo apt-get install awscli -y
+
 echo "Printing environment variables"
 env
 
@@ -13,7 +16,7 @@ echo "Setting up aws-sdk layer"
 . auto/layer
 
 echo "Install serverless"
-yarn global add serverless --prefix /usr/local
+sudo yarn global add serverless --prefix /usr/local
 
 echo "Deploying notification-api"
 serverless deploy -v
