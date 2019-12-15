@@ -16,7 +16,7 @@ echo "Setting up aws-sdk layer"
 . auto/layer
 
 echo "Install serverless"
-sudo yarn global add serverless --prefix /usr/local
+yarn add serverless
 
 echo "Deploying notification-api"
-serverless deploy -v
+./node_modules/.bin/serverless deploy -v
