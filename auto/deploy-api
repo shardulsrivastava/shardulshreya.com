@@ -13,7 +13,7 @@ echo "Setting up aws-sdk layer"
 . auto/layer
 
 echo "Install serverless"
-yarn global add serverless --prefix /usr/bin
+yarn global add serverless --prefix /usr/local
 
 echo "Deploying notification-api"
 serverless deploy -v
