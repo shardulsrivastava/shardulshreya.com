@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
 
-set -euox pipefail
+set -euo pipefail
 
 cd "$(dirname $0)/.."
-
-echo $PATH
-
-echo "Installing update"
-#sudo apt-get update -y && sudo apt-get install awscli -y
 
 echo "Printing environment variables"
 env
@@ -21,4 +16,11 @@ echo "Install serverless"
 yarn add serverless
 
 echo "Deploying notification-api"
-./node_modules/.bin/serverless deploy --config notification-api/serverless.yml
+
+export DEFAULT_AWS_REGION=ap-south-1
+echo "Region => ${DEFAULT_AWS_REGION}"
+export AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
+echo "Access Key Id => ${AWS_ACCESS_KEY_ID}"
+export AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
+echo "Secret Access Key => ${AWS_SECRET_ACCESS_KEY}"
+./node_modules/.bin/serverless deploy list --config notification-api/serverless.yml -v
