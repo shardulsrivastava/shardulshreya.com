@@ -4,6 +4,6 @@
   "description": "Notification API which sends SNS notitication to the subscribers.",
   "author": "Shardul Srivastava",
   "dependencies": {
-    "aws-sdk": "^2.590.0"
+    "aws-sdk": "^2.814.0"
   }
 }
